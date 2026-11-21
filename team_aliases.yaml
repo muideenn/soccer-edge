@@ -1,0 +1,170 @@
+# openfootball / UCL spelling -> canonical (football-data.co.uk / ClubElo) spelling.
+# Anything not listed is matched automatically; unmatched names are logged in outputs/data_quality.json.
+AFC Bournemouth: Bournemouth
+Brighton & Hove Albion FC: Brighton
+Manchester City FC: Man City
+Manchester City: Man City
+Manchester United FC: Man United
+Manchester United: Man United
+Nottingham Forest FC: Nott'm Forest
+Wolverhampton Wanderers FC: Wolves
+Tottenham Hotspur FC: Tottenham
+Tottenham Hotspur: Tottenham
+Newcastle United FC: Newcastle
+West Ham United FC: West Ham
+Leeds United FC: Leeds
+Leicester City FC: Leicester
+Hull City AFC: Hull
+Coventry City FC: Coventry
+Ipswich Town FC: Ipswich
+Sunderland AFC: Sunderland
+Sheffield United FC: Sheffield United
+Athletic Club: Ath Bilbao
+Athletic Bilbao: Ath Bilbao
+Club Atlético de Madrid: Ath Madrid
+Atlético Madrid: Ath Madrid
+Atletico Madrid: Ath Madrid
+Real Betis Balompié: Betis
+Real Betis: Betis
+Real Sociedad de Fútbol: Sociedad
+Real Sociedad: Sociedad
+RCD Espanyol de Barcelona: Espanol
+Rayo Vallecano de Madrid: Vallecano
+RC Deportivo La Coruña: La Coruna
+Deportivo La Coruña: La Coruna
+Real Racing Club de Santander: Santander
+RC Celta de Vigo: Celta
+Deportivo Alavés: Alaves
+Real Madrid CF: Real Madrid
+Real Madrid: Real Madrid
+FC Barcelona: Barcelona
+Valencia CF: Valencia
+Villarreal CF: Villarreal
+Sevilla FC: Sevilla
+Málaga CF: Malaga
+RCD Mallorca: Mallorca
+Girona FC: Girona
+UD Las Palmas: Las Palmas
+Real Valladolid CF: Valladolid
+FC Bayern München: Bayern Munich
+Bayern München: Bayern Munich
+Borussia Dortmund: Dortmund
+Bayer 04 Leverkusen: Leverkusen
+Bayer Leverkusen: Leverkusen
+Borussia Mönchengladbach: M'gladbach
+Eintracht Frankfurt: Ein Frankfurt
+1. FC Köln: FC Koln
+1. FC Union Berlin: Union Berlin
+1. FSV Mainz 05: Mainz
+FC Schalke 04: Schalke 04
+Schalke 04: Schalke 04
+SV Werder Bremen: Werder Bremen
+TSG 1899 Hoffenheim: Hoffenheim
+TSG Hoffenheim: Hoffenheim
+VfL Wolfsburg: Wolfsburg
+VfB Stuttgart: Stuttgart
+SC Paderborn 07: Paderborn
+SV 07 Elversberg: Elversberg
+Hamburger SV: Hamburg
+1. FC Heidenheim 1846: Heidenheim
+FC St. Pauli: St Pauli
+Hertha BSC: Hertha
+RB Leipzig: RB Leipzig
+FC Internazionale Milano: Inter
+Inter Milan: Inter
+Internazionale: Inter
+AC Milan: Milan
+Juventus FC: Juventus
+Juventus: Juventus
+SSC Napoli: Napoli
+AS Roma: Roma
+SS Lazio: Lazio
+Atalanta BC: Atalanta
+ACF Fiorentina: Fiorentina
+Bologna FC 1909: Bologna
+US Sassuolo Calcio: Sassuolo
+Hellas Verona FC: Verona
+Paris Saint-Germain FC: Paris SG
+Paris Saint-Germain: Paris SG
+Olympique de Marseille: Marseille
+Olympique Lyonnais: Lyon
+AS Monaco FC: Monaco
+AS Monaco: Monaco
+Lille OSC: Lille
+LOSC Lille: Lille
+Stade Rennais FC 1901: Rennes
+Stade Rennais FC: Rennes
+OGC Nice: Nice
+Racing Club de Lens: Lens
+RC Lens: Lens
+RC Strasbourg Alsace: Strasbourg
+Stade Brestois 29: Brest
+Montpellier HSC: Montpellier
+AS Saint-Étienne: St Etienne
+FC Nantes: Nantes
+Stade de Reims: Reims
+Paris FC: Paris FC
+Le Mans FC: Le Mans
+ES Troyes AC: Troyes
+Angers SCO: Angers
+AJ Auxerre: Auxerre
+Le Havre AC: Le Havre
+FC Lorient: Lorient
+Toulouse FC: Toulouse
+Sport Lisboa e Benfica: Benfica
+SL Benfica: Benfica
+Sporting Clube de Portugal: Sporting
+Sporting CP: Sporting
+FC Porto: Porto
+AFC Ajax: Ajax
+PSV: PSV
+PSV Eindhoven: PSV
+Feyenoord: Feyenoord
+Club Brugge KV: Club Brugge
+Celtic FC: Celtic
+Galatasaray SK: Galatasaray
+FK Bodø/Glimt: Bodoe Glimt
+FC København: FC Kobenhavn
+Red Bull Salzburg: Salzburg
+FC Salzburg: Salzburg
+FC Red Bull Salzburg: Salzburg
+GNK Dinamo Zagreb: Dinamo Zagreb
+FK Crvena Zvezda: Crvena Zvezda
+FC Shakhtar Donetsk: Shakhtar
+Shakhtar Donetsk: Shakhtar
+Stade Rennais: Rennes
+Bor. Mönchengladbach: M'gladbach
+Lazio Roma: Lazio
+Sporting Braga: Sp Braga
+Sporting Clube de Braga: Sp Braga
+SC Braga: Sp Braga
+Qarabağ Ağdam FK: Qarabag
+Qarabağ FK: Qarabag
+SK Slavia Praha: Slavia Praha
+FK Shakhtar Donetsk: Shakhtar
+Dinamo Kiev: Dynamo Kyiv
+Dynamo Kyiv: Dynamo Kyiv
+FC Basel 1893: Basel
+BSC Young Boys: Young Boys
+Royale Union Saint-Gilloise: Union SG
+Club Brugge: Club Brugge
+# --- API-Football spellings (anything missed shows up under "Unmatched team names" on the Data page) ---
+Sheffield Utd: Sheffield United
+Nottingham Forest: Nott'm Forest
+Hull City: Hull
+Celta Vigo: Celta
+Rayo Vallecano: Vallecano
+Espanyol: Espanol
+Deportivo La Coruna: La Coruna
+Racing Santander: Santander
+Real Oviedo: Oviedo
+1.FC Köln: FC Koln
+1899 Hoffenheim: Hoffenheim
+FSV Mainz 05: Mainz
+1. FC Heidenheim: Heidenheim
+SV Elversberg: Elversberg
+VfL Bochum: Bochum
+Hellas Verona: Verona
+Paris Saint Germain: Paris SG
+Saint Etienne: St Etienne
+Stade Brestois 29: Brest

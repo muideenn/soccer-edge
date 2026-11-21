@@ -1,0 +1,9 @@
+date,home,away,market,selection,line,odds,bookmaker,timestamp_utc
+2026-11-21,Man City,Fulham,1X2,H,,1.50,ExampleBook,2026-11-21T09:00:00Z
+2026-11-21,Man City,Fulham,1X2,D,,4.60,ExampleBook,2026-11-21T09:00:00Z
+2026-11-21,Man City,Fulham,1X2,A,,6.50,ExampleBook,2026-11-21T09:00:00Z
+2026-11-21,Man City,Fulham,OU,over,2.5,1.70,ExampleBook,2026-11-21T09:00:00Z
+2026-11-21,Man City,Fulham,OU,under,2.5,2.15,ExampleBook,2026-11-21T09:00:00Z
+2026-11-21,Man City,Fulham,AH,home,-1.25,2.02,ExampleBook,2026-11-21T09:00:00Z
+2026-11-21,Man City,Fulham,AH,away,1.25,1.86,ExampleBook,2026-11-21T09:00:00Z
+2026-11-21,Man City,Fulham,BTTS,yes,,1.85,ExampleBook,2026-11-21T09:00:00Z

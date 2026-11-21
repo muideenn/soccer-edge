@@ -1,0 +1,52 @@
+{
+  "as_of": "2026-11-21",
+  "issues": [
+    "5 1X2 odds rows with implausible overround (<-1% or >30%)",
+    "1X2 odds below 1.01 present",
+    "EPL: latest result is 62 days before as-of date (2026-09-20) - ratings are stale",
+    "LaLiga: latest result is 62 days before as-of date (2026-09-20) - ratings are stale",
+    "Bundesliga: latest result is 62 days before as-of date (2026-09-20) - ratings are stale",
+    "SerieA: latest result is 62 days before as-of date (2026-09-20) - ratings are stale",
+    "Ligue1: latest result is 62 days before as-of date (2026-09-20) - ratings are stale"
+  ],
+  "stats": {
+    "b365_1x2_overround_median": 0.0650555615492503,
+    "EPL_last_result": "2026-09-20",
+    "EPL_days_since_last_result": 62,
+    "EPL_odds_coverage_recent": 0.93,
+    "LaLiga_last_result": "2026-09-20",
+    "LaLiga_days_since_last_result": 62,
+    "LaLiga_odds_coverage_recent": 0.915,
+    "Bundesliga_last_result": "2026-09-20",
+    "Bundesliga_days_since_last_result": 62,
+    "Bundesliga_odds_coverage_recent": 0.921,
+    "SerieA_last_result": "2026-09-20",
+    "SerieA_days_since_last_result": 62,
+    "SerieA_odds_coverage_recent": 0.93,
+    "Ligue1_last_result": "2026-09-20",
+    "Ligue1_days_since_last_result": 62,
+    "Ligue1_odds_coverage_recent": 0.926,
+    "UCL_last_result": "2026-05-30",
+    "UCL_has_odds": false
+  },
+  "unmapped_names": [
+    "UCL:BLR:BATE Borisov",
+    "UCL:BUL:PFC Ludogorets Razgrad",
+    "UCL:CRO:Dinamo Zagreb",
+    "UCL:CYP:APOEL Nikosia",
+    "UCL:CYP:Paphos FC",
+    "UCL:CZE:AC Sparta Praha",
+    "UCL:CZE:Slavia Praha",
+    "UCL:CZE:Viktoria Plze\u0148",
+    "UCL:HUN:Ferencv\u00e1rosi TC",
+    "UCL:ISR:Maccabi Haifa",
+    "UCL:ISR:Maccabi Tel Aviv",
+    "UCL:KAZ:FK Astana",
+    "UCL:KAZ:FK Kairat",
+    "UCL:MDA:FC Sheriff",
+    "UCL:SRB:Crvena Zvezda",
+    "UCL:SVK:\u0160K Slovan Bratislava",
+    "UCL:SVN:NK Maribor",
+    "UCL:TUR:\u0130stanbul Ba\u015fak\u015fehir"
+  ]
+}

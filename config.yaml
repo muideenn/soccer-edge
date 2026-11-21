@@ -1,0 +1,93 @@
+# soccer_edge configuration. Every run records a hash of this file in its logs.
+model_version: "0.1.0"
+
+paths:
+  cfmd_matches: data/raw/cfmd/data/Matches.csv     # football-data.co.uk mirror (results + Bet365/max odds)
+  cfmd_elo: data/raw/cfmd/data/EloRatings.csv      # ClubElo snapshots
+  openfootball_json: data/raw/fj                   # openfootball/football.json (results + fixtures)
+  openfootball_ucl: data/raw/ucl                   # openfootball/champions-league (UCL results)
+  dropins: data/inputs/results                     # optional: football-data.co.uk CSVs you download
+  odds_input: data/inputs/odds.csv                 # optional: odds you collect for the next matchday
+  fixtures_input: data/inputs/fixtures.csv         # optional: extra fixtures (e.g. UCL matchdays)
+  api_cache: data/api                              # cached API-Football responses (committed by the workflow)
+  site_data: web/public/data                       # JSON published to the frontend
+  aliases: team_aliases.yaml
+  outputs: outputs
+
+leagues:
+  EPL:        {code: E0,  second: E1,  of: en.1, tz: Europe/London, country: ENG}
+  LaLiga:     {code: SP1, second: SP2, of: es.1, tz: Europe/Madrid, country: ESP}
+  Bundesliga: {code: D1,  second: D2,  of: de.1, tz: Europe/Berlin, country: GER}
+  SerieA:     {code: I1,  second: I2,  of: it.1, tz: Europe/Rome,   country: ITA}
+  Ligue1:     {code: F1,  second: F2,  of: fr.1, tz: Europe/Paris,  country: FRA}
+
+user_timezone: America/New_York
+
+dixon_coles:
+  xi: 0.0019            # time-decay per day (half-life ~ 365 days); tuned on validation seasons
+  l2: 1.0               # ridge penalty on team attack/defence (shrinks thin-sample teams)
+  window_days: 1100     # only matches inside this window enter a fit
+  use_second_division: true
+  max_goals: 10
+
+elo:
+  k: 20
+  home_adv: 65
+  init_top: 1500
+  init_second: 1350
+  init_other: 1400
+  season_regress: 0.15
+
+backtest:
+  first_feature_season: 2012   # season start year from which out-of-sample features are generated
+  validation_seasons: [2016, 2017]
+  test_seasons: [2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]
+  mc_draws: 600
+
+simulation:
+  n_draws: 5000         # Monte Carlo draws for report-time uncertainty
+  seed: 7
+  lower_quantile: 0.10  # conservative probability used for bet gating and staking
+
+betting:
+  min_edge: 0.04            # EV per unit stake on the mean probability
+  require_lower_ev_positive: true
+  max_odds: {1X2: 6.0, OU25: 3.5, AH: 3.5}
+  min_odds: 1.30
+  kelly_fraction: 0.25
+  max_stake_pct: 0.02       # hard cap per bet, fraction of bankroll
+  max_matchday_exposure_pct: 0.10
+  stale_days: 24            # hard cap: latest result older than this blocks bets (covers international breaks)
+  max_missing_results: 1    # scheduled matches already played but missing a result; more blocks bets
+
+api:
+  provider: apisports        # apisports or rapidapi (env SOCCER_API_PROVIDER overrides); key from env SOCCER_API_KEY
+  run_budget: 45             # max requests per run (free plan: 100/day -> two runs a day)
+  per_minute: 10             # free-plan rate limit; raise on paid plans
+  league_ids: {EPL: 39, LaLiga: 140, Bundesliga: 78, SerieA: 135, Ligue1: 61, UCL: 2,
+               E1: 40, SP2: 141, D2: 79, I2: 136, F2: 62}
+  sync_competitions: [EPL, LaLiga, Bundesliga, SerieA, Ligue1, UCL]
+  sync_second_divisions: []  # add [E1, SP2, D2, I2, F2] on a paid plan (helps promoted-team ratings)
+  sync_injuries: true
+  sync_fixture_statistics: false   # corners/shots per finished match: 1 request each (turn on with a paid plan)
+  statistics_per_run: 10
+  odds_horizon_days: 4
+  reference_bookmakers: [Pinnacle, Bet365]   # first available book with full 1X2 anchors the model
+  ah_away_value_convention: auto             # auto | own | home (how 'Away X' handicap values are written)
+
+corners:
+  xi: 0.0025
+  l2: 40.0                    # tuned on validation seasons (heavier shrinkage than goals)
+  window_days: 800
+  dispersion_k: 12.0          # set by `cli corners-eval` on validation seasons (null = Poisson)
+  validation_seasons: [2019, 2020, 2021]
+  test_seasons: [2022, 2023, 2024, 2025]
+
+oddsapi:                     # optional second odds feed; key from env ODDS_API_KEY
+  regions: eu                # credits per call = markets x regions
+  markets: h2h,totals
+  min_hours_between_runs: 20 # ~6 competitions x 2 credits once a day fits the free 500 credits/month
+  sports: {EPL: soccer_epl, LaLiga: soccer_spain_la_liga, Bundesliga: soccer_germany_bundesliga,
+           SerieA: soccer_italy_serie_a, Ligue1: soccer_france_ligue_one, UCL: soccer_uefa_champs_league}
+
+demo_mode: auto              # auto = synthetic, clearly-labelled odds only when no real odds are available

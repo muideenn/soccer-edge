@@ -1,0 +1,57 @@
+{
+  "retrieved_at": "2026-11-21T08:20:36+00:00",
+  "sources": {
+    "clubelo": {
+      "path": "/home/claude/soccer_edge/data/raw/cfmd/data/EloRatings.csv",
+      "rows": 273972,
+      "max_date": "2026-09-01"
+    },
+    "cfmd": {
+      "path": "/home/claude/soccer_edge/data/raw/cfmd/data/Matches.csv",
+      "repo": "github.com/xgabora/Club-Football-Match-Data-2000-2025",
+      "upstream": "football-data.co.uk (Bet365 & market-max pre-match odds), ClubElo",
+      "commit": "25882a58a736",
+      "commit_time": "2026-09-06T15:45:38+02:00",
+      "rows": 97591,
+      "max_date": "2026-09-03"
+    },
+    "openfootball": {
+      "path": "/home/claude/soccer_edge/data/raw/fj",
+      "repo": "github.com/openfootball/football.json",
+      "commit": "e6744429ee39",
+      "commit_time": "2026-09-22T09:33:49+00:00",
+      "results_rows": 2001,
+      "fixture_rows": 1503,
+      "max_result_date": "2026-09-20"
+    },
+    "openfootball_ucl": {
+      "path": "/home/claude/soccer_edge/data/raw/ucl",
+      "repo": "github.com/openfootball/champions-league",
+      "commit": "abfaeddc2ee3",
+      "commit_time": "2026-07-02T17:56:11+02:00",
+      "rows": 1997,
+      "max_date": "2026-05-30",
+      "note": "results only; no odds; 90-minute scores used for extra-time matches"
+    }
+  },
+  "unmapped_names": [
+    "UCL:BLR:BATE Borisov",
+    "UCL:BUL:PFC Ludogorets Razgrad",
+    "UCL:CRO:Dinamo Zagreb",
+    "UCL:CYP:APOEL Nikosia",
+    "UCL:CYP:Paphos FC",
+    "UCL:CZE:AC Sparta Praha",
+    "UCL:CZE:Slavia Praha",
+    "UCL:CZE:Viktoria Plze\u0148",
+    "UCL:HUN:Ferencv\u00e1rosi TC",
+    "UCL:ISR:Maccabi Haifa",
+    "UCL:ISR:Maccabi Tel Aviv",
+    "UCL:KAZ:FK Astana",
+    "UCL:KAZ:FK Kairat",
+    "UCL:MDA:FC Sheriff",
+    "UCL:SRB:Crvena Zvezda",
+    "UCL:SVK:\u0160K Slovan Bratislava",
+    "UCL:SVN:NK Maribor",
+    "UCL:TUR:\u0130stanbul Ba\u015fak\u015fehir"
+  ]
+}

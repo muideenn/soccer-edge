@@ -1,0 +1,87 @@
+name: Update data and site
+
+on:
+  schedule:
+    - cron: "17 7,15 * * *"     # 02:17 and 10:17 New York (winter); two runs fit the free 100 requests/day
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "Past seasons to backfill once, space separated (e.g. 2024 2025). Uses ~6 requests per season."
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Cache historical datasets
+        uses: actions/cache@v4
+        with:
+          path: data/raw
+          key: raw-${{ hashFiles('fetch_data.sh') }}
+
+      - run: ./fetch_data.sh
+
+      - name: Sync API-Football, refit models, export site JSON
+        env:
+          SOCCER_API_KEY: ${{ secrets.SOCCER_API_KEY }}
+          SOCCER_API_PROVIDER: ${{ vars.SOCCER_API_PROVIDER || 'apisports' }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python -m soccer_edge.cli update --backfill ${{ github.event.inputs.backfill }}
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "soccer-edge-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/api web/public/data outputs/paper_log.csv 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "data: update $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push
+
+      - uses: actions/setup-node@v4
+        if: vars.DEPLOY_TARGET != 'vercel'
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Build site for GitHub Pages
+        if: vars.DEPLOY_TARGET != 'vercel'
+        working-directory: web
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}/
+        run: npm ci && npm test && npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        if: vars.DEPLOY_TARGET != 'vercel'
+        with:
+          path: web/dist
+
+  deploy:
+    if: vars.DEPLOY_TARGET != 'vercel'
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

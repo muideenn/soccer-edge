@@ -1,0 +1,109 @@
+{
+  "dispersion_k": 12.0,
+  "validation_logloss_by_k": {
+    "None": 4.7563547974967415,
+    "40.0": 4.715161405128219,
+    "20.0": 4.69312506544563,
+    "12.0": 4.682244164884896,
+    "8.0": 4.686707937599194,
+    "5.0": 4.72109049040532
+  },
+  "test_seasons": [
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "validation_seasons": [
+    2019,
+    2020,
+    2021
+  ],
+  "lines": [
+    {
+      "line": 8.5,
+      "n": 7044,
+      "observed_over": 0.6084611016467916,
+      "model_mean_p": 0.5872208203056933,
+      "logloss_model": 0.6602537525876205,
+      "logloss_base_rate": 0.6740908174079306,
+      "brier_model": 0.23387180355414797,
+      "brier_base_rate": 0.24038342709287347
+    },
+    {
+      "line": 9.5,
+      "n": 7044,
+      "observed_over": 0.49318568994889267,
+      "model_mean_p": 0.4794414456459776,
+      "logloss_model": 0.6838492630150388,
+      "logloss_base_rate": 0.6964649334709562,
+      "brier_model": 0.24532966398059564,
+      "brier_base_rate": 0.2516553101967745
+    },
+    {
+      "line": 10.5,
+      "n": 7044,
+      "observed_over": 0.3800397501419648,
+      "model_mean_p": 0.37794142846562395,
+      "logloss_model": 0.654316614425015,
+      "logloss_base_rate": 0.6670173723617737,
+      "brier_model": 0.2309427455148523,
+      "brier_base_rate": 0.23702306064863995
+    },
+    {
+      "line": 11.5,
+      "n": 7044,
+      "observed_over": 0.27356615559341285,
+      "model_mean_p": 0.28804647099599145,
+      "logloss_model": 0.577604261400473,
+      "logloss_base_rate": 0.5901161860395752,
+      "brier_model": 0.19508185843088896,
+      "brier_base_rate": 0.2001266192013155
+    }
+  ],
+  "calibration_over9_5": [
+    {
+      "mean_pred": 0.340714847198415,
+      "observed": 0.3859250851305335,
+      "n": 881
+    },
+    {
+      "mean_pred": 0.4018172644929434,
+      "observed": 0.4125,
+      "n": 880
+    },
+    {
+      "mean_pred": 0.4370225627562801,
+      "observed": 0.4540295119182747,
+      "n": 881
+    },
+    {
+      "mean_pred": 0.46596409774841807,
+      "observed": 0.4727272727272727,
+      "n": 880
+    },
+    {
+      "mean_pred": 0.49292933246636567,
+      "observed": 0.4909090909090909,
+      "n": 880
+    },
+    {
+      "mean_pred": 0.5205602410705203,
+      "observed": 0.5743473325766175,
+      "n": 881
+    },
+    {
+      "mean_pred": 0.5549789833898189,
+      "observed": 0.553409090909091,
+      "n": 880
+    },
+    {
+      "mean_pred": 0.6215418795132931,
+      "observed": 0.601589103291714,
+      "n": 881
+    }
+  ],
+  "mean_total_pred": 9.643195875981606,
+  "mean_total_obs": 9.654457694491766,
+  "note": "No historical corner odds in the data: corner probabilities are evaluated, corner betting rules are not."
+}
