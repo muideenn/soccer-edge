@@ -147,6 +147,9 @@ def build_base(matches, fixtures, clubelo, cfg):
         fx["is_fixture"] = True
     m = matches.assign(is_fixture=False)
     allm = pd.concat([m, fx], ignore_index=True).sort_values(["date", "match_id"]).reset_index(drop=True)
+    for c in ("hg", "ag", "hthg", "htag", "hs", "as_", "hst", "ast", "hc", "ac"):
+        if c in allm:
+            allm[c] = pd.to_numeric(allm[c], errors="coerce")
     elo, ratings = run_elo(allm, cfg)
     allm = allm.merge(elo, on="match_id", how="left")
     allm = attach_clubelo(allm, clubelo)

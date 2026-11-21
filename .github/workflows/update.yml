@@ -46,6 +46,7 @@ jobs:
           SOCCER_API_KEY: ${{ secrets.SOCCER_API_KEY }}
           SOCCER_API_PROVIDER: ${{ vars.SOCCER_API_PROVIDER || 'apisports' }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          SPORTMONKS_API_TOKEN: ${{ secrets.SPORTMONKS_API_TOKEN }}
         run: python -m soccer_edge.cli update --backfill ${{ github.event.inputs.backfill }}
 
       - name: Commit refreshed data

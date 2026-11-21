@@ -33,6 +33,7 @@ Without keys the site runs in **demo mode**:
 | `SOCCER_API_KEY` | for live data | API-Football v3 (direct or via RapidAPI) | fixtures, results, pre-match odds (incl. corners), injuries, match statistics |
 | `SOCCER_API_PROVIDER` | optional | `apisports` (default) or `rapidapi` | which API-Football endpoint and header to use |
 | `ODDS_API_KEY` | optional | The Odds API v4 | second odds source for 1X2 and goal totals (more bookmakers to shop) |
+| `SPORTMONKS_API_TOKEN` | optional | Sportmonks Football API v3 | third source: fixtures, results, corner statistics, pre-match odds (1X2, totals, BTTS, double chance, Asian handicap, corners) |
 
 Keys are read **only** by the Python pipeline (`soccer_edge/env.py`):
 - They are never written to disk, logs or the published JSON; error messages are redacted.
@@ -68,6 +69,7 @@ Or with the GitHub CLI:
 ```bash
 gh secret set SOCCER_API_KEY          # prompts for the value; nothing lands in shell history
 gh secret set ODDS_API_KEY
+gh secret set SPORTMONKS_API_TOKEN
 gh variable set SOCCER_API_PROVIDER --body apisports
 gh workflow run "Update data and site"
 ```
@@ -125,6 +127,13 @@ gh workflow run "Update data and site"
 - **The Odds API v4** (`ODDS_API_KEY`):
   - **Markets:** only its documented featured markets are used, h2h (1X2) and totals. Corners are not requested from it.
   - **Cost:** each call costs markets × regions credits; the free plan is 500 credits/month. The default (2 markets × 1 region × 6 competitions, at most once every 20 h) is about 370 credits/month.
+- **Sportmonks v3** (`SPORTMONKS_API_TOKEN`):
+  - **Plan:** the free plan covers two leagues (Danish Superliga, Scottish Premiership), so the top five and the UCL need a paid plan. Starter is €29/month for any 5 leagues, and odds may be sold as a bundle. Plan errors show on the Data page instead of crashing the run.
+  - **Calls:** one paged call fetches the last 10 days and the next 4 days for all your leagues (results plus corner statistics). Odds cost 1 call per upcoming fixture. `sportmonks.run_budget` caps each run at 200 calls.
+  - **League ids:** check them for your subscription with `python -m soccer_edge.cli sportmonks-leagues`, then edit `sportmonks.league_ids` in `config.yaml` if needed.
+  - **Season backfill:** add `backfill_ranges` (max 100 days each; each range is fetched once and cached).
+  - **Parsing:** markets are matched by description first and documented id second, so an unknown market is skipped rather than mis-read. The 90-minute score comes from the `2ND_HALF` score entry, so extra time is excluded.
+- **How sources combine.** When several providers report the same match, the highest-priority row wins: football-data files, then the archive, then API-Football, then Sportmonks, then openfootball. Gaps such as corners are filled from the others. Any disagreement in score, or a date more than a day apart, is listed under "Source disagreements" on the Data page. Odds from every provider are pooled before the best price is chosen.
 - **Historical archive** (football-data.co.uk via a GitHub mirror, openfootball, ClubElo): results, shots, corners and Bet365 odds used for training and backtesting.
 - **Gaps:** no lineups or xG. Injuries are displayed, not modelled. UCL and corner betting rules can't be validated because there are no historical UCL or corner odds. Corner ratings go stale without per-match statistics. Kickoff times from openfootball can be provisional.
 

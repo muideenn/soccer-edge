@@ -91,3 +91,11 @@ oddsapi:                     # optional second odds feed; key from env ODDS_API_
            SerieA: soccer_italy_serie_a, Ligue1: soccer_france_ligue_one, UCL: soccer_uefa_champs_league}
 
 demo_mode: auto              # auto = synthetic, clearly-labelled odds only when no real odds are available
+
+sportmonks:                  # optional third provider; token from env SPORTMONKS_API_TOKEN
+  # Verify these ids for your subscription with:  python -m soccer_edge.cli sportmonks-leagues
+  league_ids: {EPL: 8, LaLiga: 564, Bundesliga: 82, SerieA: 384, Ligue1: 301, UCL: 2}
+  run_budget: 200            # calls per run (Starter plan: 2,000 per entity per hour)
+  lookback_days: 10          # recent results re-fetched every run (catches late corrections)
+  sync_odds: true            # 1 call per upcoming fixture; needs odds in your plan
+  backfill_ranges: []        # e.g. [["2026-08-01", "2026-11-08"]]  (max 100 days each, fetched once)

@@ -107,6 +107,8 @@ def export_all(cfg, as_of, M, S, odds_meta, bt, quality, manifest, injuries, tea
         sync_status.pop("request_log", None)
     osf = p(cfg, "api_cache") / "oddsapi_status.json"
     odds_status = json.loads(osf.read_text()) if osf.exists() else None
+    smf = p(cfg, "api_cache") / "sportmonks_status.json"
+    sm_status = json.loads(smf.read_text()) if smf.exists() else None
     _write(site / "matchday.json", export_matchday(cfg, as_of, M, S, injuries, odds_meta, team_map))
     perf = export_performance(cfg, bt)
     perf["corners"] = json.loads(cm.read_text()) if cm.exists() else None
@@ -116,6 +118,7 @@ def export_all(cfg, as_of, M, S, odds_meta, bt, quality, manifest, injuries, tea
         "generated_utc": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"), "as_of": str(as_of),
         "model_version": cfg["model_version"], "config_hash": cfg["_hash"], "demo": demo,
         "disclaimer": DISCLAIMER, "sources": manifest["sources"], "quality": quality,
-        "unmapped_names": manifest.get("unmapped_names", [])[:200], "sync": sync_status, "odds_sync": odds_status,
+        "unmapped_names": manifest.get("unmapped_names", [])[:200], "sync": sync_status, "odds_sync": odds_status, "sportmonks_sync": sm_status,
+        "source_conflicts": manifest.get("source_conflicts", []),
         "betting_rules": cfg["betting"], "simulation": cfg["simulation"]})
     return site

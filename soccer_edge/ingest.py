@@ -40,6 +40,23 @@ def _git_meta(path):
         return {"commit": None, "commit_time": None}
 
 
+def find_conflicts(dom):
+    """Matches reported by more than one source with different scores or dates (shown on the Data page)."""
+    d = dom.dropna(subset=["hg", "ag"])
+    out = []
+    for k, g in d.groupby(["_wk", "comp", "home", "away"], sort=False):
+        if len(g) < 2:
+            continue
+        scores = {(int(a), int(b)) for a, b in zip(g.hg, g.ag)}
+        dates = set(g.date.dt.date)
+        span = (max(dates) - min(dates)).days if dates else 0
+        if len(scores) > 1 or span > 1:
+            out.append({"comp": k[1], "home": k[2], "away": k[3],
+                        "reports": [{"source": str(r.source).split(":")[0], "date": str(r.date.date()),
+                                     "score": f"{int(r.hg)}-{int(r.ag)}"} for r in g.itertuples()]})
+    return out[:200]
+
+
 class Loader:
     def __init__(self, cfg):
         self.cfg = cfg
@@ -257,16 +274,28 @@ class Loader:
                 "fetched_utc": max(x["fetched_utc"] or "" for x in api_meta["files"]),
                 "results_rows": int(len(api_res)), "fixture_rows": int(len(api_fx)),
                 "max_date": api_meta["latest_result"], "rejected_items": api_meta["rejected_items"]}
+        from .sportmonks import load_matches as load_sm
+        sm_res, sm_fx, sm_meta = load_sm(self.cfg, self.mapper, cands, all_teams) if "sportmonks" in self.cfg else (pd.DataFrame(), pd.DataFrame(), {"files": 0})
+        if sm_meta.get("files"):
+            self.manifest["sources"]["sportmonks"] = {
+                "provider": "sportmonks", "files": sm_meta["files"], "fetched_utc": sm_meta["fetched_utc"],
+                "results_rows": int(len(sm_res)), "fixture_rows": int(len(sm_fx)), "max_date": sm_meta["latest_result"],
+                "rejected_items": sm_meta["rejected_items"]}
         ucl = self.load_ucl(cf, clubelo)
-        api_ucl = api_res[api_res.comp == "UCL"] if len(api_res) else api_res
-        api_dom = api_res[api_res.comp != "UCL"] if len(api_res) else api_res
-        dom = pd.concat([x for x in (di, cf, api_dom, of_res) if len(x)], ignore_index=True)
+        split = lambda d, u: (d[d.comp == "UCL"] if u else d[d.comp != "UCL"]) if len(d) else d  # noqa: E731
+        dom = pd.concat([x for x in (di, cf, split(api_res, 0), split(sm_res, 0), of_res) if len(x)], ignore_index=True)
         src = dom.source.astype(str)
-        dom["_p"] = np.select([src.str.startswith("dropin"), src.eq("cfmd"), src.str.startswith("api")], [0, 1, 2], 3)
+        dom["_p"] = np.select([src.str.startswith("dropin"), src.eq("cfmd"), src.str.startswith("api"),
+                               src.str.startswith("sportmonks")], [0, 1, 2, 3], 4)
         dom["_wk"] = season_of(dom.date)
-        dom = (dom.sort_values(["_p", "date"])
-               .drop_duplicates(["_wk", "comp", "home", "away"], keep="first"))
-        ucl_all = pd.concat([x for x in (api_ucl, ucl) if len(x)], ignore_index=True)
+        self.manifest["source_conflicts"] = find_conflicts(dom)
+        # keep the best source's row, but fill its gaps (e.g. corners) from other sources for the same match
+        key = ["_wk", "comp", "home", "away"]
+        dom = dom.sort_values(["_p", "date"])
+        fill = dom.groupby(key, sort=False)[["hc", "ac", "hs", "as_", "hst", "ast", "hthg", "htag"]].transform("first")
+        dom[fill.columns] = dom[fill.columns].fillna(fill)
+        dom = dom.drop_duplicates(key, keep="first")
+        ucl_all = pd.concat([x for x in (split(api_res, 1), split(sm_res, 1), ucl) if len(x)], ignore_index=True)
         if len(ucl_all):
             ucl_all["_wk"] = season_of(ucl_all.date)
             ucl_all = ucl_all.drop_duplicates(["date", "home", "away"], keep="first").drop(columns="_wk")
@@ -276,15 +305,20 @@ class Loader:
         for c in BASE_COLS + ODDS_COLS:
             if c not in allm:
                 allm[c] = np.nan
+        for c in ["hg", "ag", "hthg", "htag", "hs", "as_", "hst", "ast", "hc", "ac"] + ODDS_COLS:
+            allm[c] = pd.to_numeric(allm[c], errors="coerce")  # providers mix ints, strings and nulls
         allm = allm.sort_values(["date", "comp", "home"]).reset_index(drop=True)
         allm["match_id"] = (allm.date.dt.strftime("%Y%m%d") + "_" + allm.comp + "_" +
                             allm.home.str.replace(" ", "") + "_" + allm.away.str.replace(" ", ""))
         allm = allm.drop_duplicates("match_id")
         # fixtures: API first (UTC kickoffs + fixture ids), then openfootball, then user file
-        fx_parts = [x for x in (api_fx, fixtures, self.load_fixture_input(allm)) if len(x)]
+        fx_parts = [x for x in (api_fx, sm_fx, fixtures, self.load_fixture_input(allm)) if len(x)]
         fixtures = pd.concat(fx_parts, ignore_index=True) if fx_parts else pd.DataFrame()
         if len(fixtures):
             fixtures["season"] = season_of(fixtures.date)
+            if "sm_id" in fixtures:  # carry the Sportmonks id onto the kept row so its odds still match
+                smid = fixtures.groupby(["season", "comp", "home", "away"], sort=False).sm_id.transform("first")
+                fixtures["sm_id"] = fixtures.sm_id.fillna(smid)
             fixtures = fixtures.drop_duplicates(["season", "comp", "home", "away"], keep="first")
             played = set(zip(allm.comp, allm.home, allm.away, allm.season))
             fixtures = fixtures[[k not in played for k in zip(fixtures.comp, fixtures.home, fixtures.away, fixtures.season)]]

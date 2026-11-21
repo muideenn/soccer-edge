@@ -50,6 +50,13 @@ def load_odds(cfg, fixtures=None):
         if len(a):
             parts.append(a.assign(source="api"))
             meta["sources"].append("api-football")
+    if fixtures is not None and len(fixtures) and "sportmonks" in cfg:
+        from .sportmonks import load_odds as sm_odds
+        c, cmeta = sm_odds(cfg, fixtures)
+        meta["sportmonks"] = cmeta
+        if len(c):
+            parts.append(c)
+            meta["sources"].append("sportmonks")
     if fixtures is not None and len(fixtures) and "oddsapi" in cfg:
         from .names import NameMapper
         from .oddsapi import load_latest
@@ -182,6 +189,9 @@ def match_odds(odds, r):
     m = (odds.home == r.home) & (odds.away == r.away)
     if fid is not None and "fixture_id" in odds and pd.notna(fid):
         m = m | (odds.fixture_id == fid)
+    smid = getattr(r, "sm_id", None)
+    if smid is not None and "sm_id" in odds and pd.notna(smid):
+        m = m | (odds.sm_id == smid)
     return odds[m]
 
 

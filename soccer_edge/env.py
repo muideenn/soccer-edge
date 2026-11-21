@@ -4,7 +4,7 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SECRET_NAMES = ("SOCCER_API_KEY", "ODDS_API_KEY", "API_FOOTBALL_KEY")
+SECRET_NAMES = ("SOCCER_API_KEY", "ODDS_API_KEY", "API_FOOTBALL_KEY", "SPORTMONKS_API_TOKEN")
 
 
 def load_dotenv(files=(".env.local", ".env")):

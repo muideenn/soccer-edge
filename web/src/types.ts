@@ -180,5 +180,7 @@ export interface Meta {
     warnings: string[];
   };
   betting_rules: Record<string, unknown>;
+  sportmonks_sync?: { steps: { step: string; ok: boolean; reason?: string; items?: number }[]; warnings: string[]; calls_used?: number; rate_limit?: Record<string, unknown> | null } | null;
+  source_conflicts?: { comp: string; home: string; away: string; reports: { source: string; date: string; score: string }[] }[];
   odds_sync?: { provider: string; steps: { step: string; ok: boolean; reason?: string; items?: number }[]; credits_remaining?: string | null } | null;
 }

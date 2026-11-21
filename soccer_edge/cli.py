@@ -43,7 +43,12 @@ def cmd_sync(cfg, backfill):
         st = Sync(cfg, client, p(cfg, "api_cache")).run(backfill=backfill)
         print(json.dumps({k: v for k, v in st.items() if k != "request_log"}, indent=2))
     else:
-        print("SOCCER_API_KEY not set: skipping API-Football sync (site will use cached data or demo mode)")
+        print("SOCCER_API_KEY not set: skipping API-Football sync")
+    from .sportmonks import sync as sm_sync
+    sst = sm_sync(cfg, p(cfg, "api_cache"))
+    (p(cfg, "api_cache")).mkdir(parents=True, exist_ok=True)
+    (p(cfg, "api_cache") / "sportmonks_status.json").write_text(json.dumps(sst, default=str))
+    print(json.dumps({k: v for k, v in sst.items() if k != "steps"} | {"steps": sst["steps"][:8]}, indent=2, default=str))
     ost = fetch_oddsapi(cfg, p(cfg, "api_cache"))
     (p(cfg, "api_cache")).mkdir(parents=True, exist_ok=True)
     (p(cfg, "api_cache") / "oddsapi_status.json").write_text(json.dumps(ost))
@@ -61,7 +66,7 @@ def cmd_export(cfg, as_of, html=False):
     out.mkdir(parents=True, exist_ok=True)
     L, m, fx, base = _load(cfg)
     real_odds = any((p(cfg, "api_cache") / d).exists() and any((p(cfg, "api_cache") / d).glob("*.json"))
-                    for d in ("odds/latest", "oddsapi/latest")) or p(cfg, "odds_input").exists()
+                    for d in ("odds/latest", "oddsapi/latest", "sportmonks/odds")) or p(cfg, "odds_input").exists()
     mode = cfg.get("demo_mode", "auto")
     cfg["_demo_odds"] = mode == "on" or (mode == "auto" and not real_odds)
     q = check(m, fx, cfg, as_of)
@@ -82,7 +87,7 @@ def cmd_export(cfg, as_of, html=False):
     settle(out / "paper_log.csv", base, p(cfg, "api_cache") / "odds" / "history",
            cfg["api"].get("reference_bookmakers", []))
     inj = load_api_injuries(cfg)
-    demo = cfg["_demo_odds"] or "api_football" not in L.manifest["sources"]
+    demo = cfg["_demo_odds"] or not ({"api_football", "sportmonks"} & set(L.manifest["sources"]))
     site = export_all(cfg, as_of, M, S, odds_meta, bt, q, L.manifest, inj, L.team_map, demo)
     if html:
         tag = pd.Timestamp(as_of).strftime("%Y-%m-%d")
@@ -93,7 +98,7 @@ def cmd_export(cfg, as_of, html=False):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(prog="soccer_edge")
-    ap.add_argument("command", choices=["sync", "export", "update", "backtest", "report", "quality", "corners-eval", "check-env"])
+    ap.add_argument("command", choices=["sync", "export", "update", "backtest", "report", "quality", "corners-eval", "check-env", "sportmonks-leagues"])
     ap.add_argument("--config")
     ap.add_argument("--as-of", default=str(dt.date.today()))
     ap.add_argument("--backfill", nargs="*", type=int, default=[])
@@ -116,6 +121,20 @@ def main(argv=None):
         from .env import odds_key, soccer_key
         print(f"SOCCER_API_KEY: {'set' if soccer_key() else 'missing (demo mode)'}")
         print(f"ODDS_API_KEY:   {'set' if odds_key() else 'missing (optional)'}")
+        from .sportmonks import token as sm_token
+        print(f"SPORTMONKS_API_TOKEN: {'set' if sm_token() else 'missing (optional)'}")
+    elif a.command == "sportmonks-leagues":
+        from .sportmonks import Sportmonks
+        c = Sportmonks(budget=20)
+        rows = c.get_all("football/leagues", include="country")
+        want = cfg.get("sportmonks", {}).get("league_ids", {})
+        print(f"{len(rows)} leagues in your subscription:")
+        for x in sorted(rows, key=lambda x: str(x.get("name"))):
+            tag = [k for k, v in want.items() if v == x.get("id")]
+            print(f"  {x.get('id'):>6}  {x.get('name')}  ({(x.get('country') or {}).get('name', '')}){'  <- ' + tag[0] if tag else ''}")
+        missing = [k for k, v in want.items() if v not in {x.get('id') for x in rows}]
+        if missing:
+            print(f"Not in your subscription (or different ids): {', '.join(missing)} -> edit sportmonks.league_ids in config.yaml")
     elif a.command == "corners-eval":
         from .corners import evaluate
         from .ingest import Loader

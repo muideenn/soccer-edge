@@ -9,7 +9,7 @@ if (bad.length) {
   console.error(`✗ Refusing to build: ${bad.join(", ")} would be embedded in the public bundle. Use a server-side name (e.g. SOCCER_API_KEY).`);
   process.exit(1);
 }
-const secrets = ["SOCCER_API_KEY", "ODDS_API_KEY", "API_FOOTBALL_KEY"].map((k) => process.env[k]).filter((v) => v && v.length >= 6);
+const secrets = ["SOCCER_API_KEY", "ODDS_API_KEY", "API_FOOTBALL_KEY", "SPORTMONKS_API_TOKEN"].map((k) => process.env[k]).filter((v) => v && v.length >= 6);
 const walk = (d) => readdirSync(d).flatMap((f) => { const p = join(d, f); return statSync(p).isDirectory() ? walk(p) : [p]; });
 let leaks = 0;
 for (const file of walk("dist")) {

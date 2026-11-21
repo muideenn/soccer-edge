@@ -37,6 +37,25 @@ export default function DataStatus({ meta }: { meta: Meta }) {
         </div>
       ) : <p className="muted">Not configured (optional). Set <code>ODDS_API_KEY</code> to add a second odds source.</p>}
 
+      <h2>Sportmonks</h2>
+      {meta.sportmonks_sync ? (
+        <div className="glass pad small">
+          <p>Calls this run: <b>{meta.sportmonks_sync.calls_used ?? 0}</b>{meta.sportmonks_sync.rate_limit ? ` · rate limit: ${JSON.stringify(meta.sportmonks_sync.rate_limit)}` : ""}</p>
+          {meta.sportmonks_sync.warnings.length > 0 && <div className="banner warn">{meta.sportmonks_sync.warnings.map((w) => <div key={w}>{w}</div>)}</div>}
+          <ul>{meta.sportmonks_sync.steps.slice(0, 12).map((x, k) => <li key={k}>{x.step}: {x.ok ? <span className="pill-ok">ok</span> : <span className="pill-bad">failed</span>} {x.reason ?? ""} {x.items !== undefined ? `(${x.items})` : ""}</li>)}</ul>
+          {meta.sportmonks_sync.steps.length > 12 && <p className="muted">…and {meta.sportmonks_sync.steps.length - 12} more steps.</p>}
+        </div>
+      ) : <p className="muted">Not configured (optional). Set <code>SPORTMONKS_API_TOKEN</code> to add Sportmonks fixtures, results, corners and odds.</p>}
+
+      <h2>Source disagreements</h2>
+      <p className="small muted">Matches where two providers report a different score or a date more than a day apart. The higher-priority source wins (football-data files → archive → API-Football → Sportmonks → openfootball); check these by hand.</p>
+      {meta.source_conflicts && meta.source_conflicts.length ? (
+        <div className="glass tbl"><table>
+          <thead><tr><th className="l">Match</th><th className="l">Reports</th></tr></thead>
+          <tbody>{meta.source_conflicts.slice(0, 50).map((c, k) => <tr key={k}><td className="l">{c.home} v {c.away} <span className="muted">({c.comp})</span></td><td className="l small">{c.reports.map((r) => `${r.source}: ${r.score} on ${r.date}`).join(" · ")}</td></tr>)}</tbody>
+        </table></div>
+      ) : <p className="pill-ok">No disagreements between sources.</p>}
+
       <h2>Data-quality flags</h2>
       {meta.quality.issues.length ? <div className="banner warn"><ul style={{ margin: 0 }}>{meta.quality.issues.map((i) => <li key={i}>{i}</li>)}</ul></div> : <p className="pill-ok">No issues flagged.</p>}
 
