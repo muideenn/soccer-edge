@@ -1,0 +1,2 @@
+bets,hit_rate,avg_odds,avg_ev_claimed,roi_flat,roi_ci95_lo,roi_ci95_hi,profit_units,max_drawdown_units,longest_losing_streak,clv_mean
+70.0,0.34285714285714286,2.606,0.06386720571301922,-0.014357142857142862,-0.322025,0.3177892857142857,-1.0050000000000003,6.6850000000000005,5.0,

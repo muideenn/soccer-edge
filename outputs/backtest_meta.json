@@ -7,41 +7,41 @@
       "logit_full": 0.7,
       "gbm": 0.0
     },
-    "val_logloss_ens": 0.9517268962661645,
-    "val_logloss_dc": 0.9564078546751467,
+    "val_logloss_ens": 0.9517268962674067,
+    "val_logloss_dc": 0.9564078546751474,
     "bet_model": "ens"
   },
   "anchor_weight_model": 0.0,
   "bankroll": {
     "anchored": {
-      "final": 0.8818644002175757,
-      "min": 0.8488973217585558,
-      "max_drawdown_pct": 0.1511026782414442
+      "final": 0.8818644004213549,
+      "min": 0.8488973213715844,
+      "max_drawdown_pct": 0.15110267862841564
     },
     "raw_model": {
-      "final": 0.10673317102378964,
-      "min": 0.10673317102378964,
-      "max_drawdown_pct": 0.8963719641597849
+      "final": 0.1067331705359348,
+      "min": 0.1067331705359348,
+      "max_drawdown_pct": 0.8963719646128091
     },
     "market_residual": {
-      "final": 0.9819799162766351,
-      "min": 0.9289271380098407,
-      "max_drawdown_pct": 0.07616239323910445
+      "final": 0.9819799164511608,
+      "min": 0.9289271380520967,
+      "max_drawdown_pct": 0.07616239320171525
     }
   },
   "n_test_matches": 14122,
-  "config_hash": "29955b893433",
+  "config_hash": "27f5763cb39d",
   "model_version": "0.1.0",
   "data_manifest": {
-    "retrieved_at": "2026-11-21T08:13:01+00:00",
+    "retrieved_at": "2026-11-23T16:29:22+00:00",
     "sources": {
       "clubelo": {
-        "path": "/home/claude/soccer_edge/data/raw/cfmd/data/EloRatings.csv",
+        "path": "/home/runner/work/soccer-edge/soccer-edge/data/raw/cfmd/data/EloRatings.csv",
         "rows": 273972,
         "max_date": "2026-09-01"
       },
       "cfmd": {
-        "path": "/home/claude/soccer_edge/data/raw/cfmd/data/Matches.csv",
+        "path": "/home/runner/work/soccer-edge/soccer-edge/data/raw/cfmd/data/Matches.csv",
         "repo": "github.com/xgabora/Club-Football-Match-Data-2000-2025",
         "upstream": "football-data.co.uk (Bet365 & market-max pre-match odds), ClubElo",
         "commit": "25882a58a736",
@@ -50,16 +50,16 @@
         "max_date": "2026-09-03"
       },
       "openfootball": {
-        "path": "/home/claude/soccer_edge/data/raw/fj",
+        "path": "/home/runner/work/soccer-edge/soccer-edge/data/raw/fj",
         "repo": "github.com/openfootball/football.json",
         "commit": "e6744429ee39",
-        "commit_time": "2026-09-22T09:33:49+00:00",
+        "commit_time": "2026-09-22T09:33:49Z",
         "results_rows": 2001,
         "fixture_rows": 1503,
         "max_result_date": "2026-09-20"
       },
       "openfootball_ucl": {
-        "path": "/home/claude/soccer_edge/data/raw/ucl",
+        "path": "/home/runner/work/soccer-edge/soccer-edge/data/raw/ucl",
         "repo": "github.com/openfootball/champions-league",
         "commit": "abfaeddc2ee3",
         "commit_time": "2026-07-02T17:56:11+02:00",
@@ -68,6 +68,3408 @@
         "note": "results only; no odds; 90-minute scores used for extra-time matches"
       }
     },
+    "source_conflicts": [
+      {
+        "comp": "E1",
+        "home": "Preston",
+        "away": "Derby",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "0-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-20",
+            "score": "3-0"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Everton",
+        "away": "Leicester",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-27",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Birmingham",
+        "away": "Huddersfield",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "0-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-28",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Nottm Forest",
+        "away": "Bristol City",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-03",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Alaves",
+        "away": "Granada",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "0-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-16",
+            "score": "4-2"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Valencia",
+        "away": "Ath Bilbao",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "0-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-12",
+            "score": "2-2"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Bologna",
+        "away": "Cagliari",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-31",
+            "score": "3-2"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Almeria",
+        "away": "Sp Gijon",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-04",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Oviedo",
+        "away": "Mirandes",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-24",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "West Ham",
+        "away": "Chelsea",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "3-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-24",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Ponferradina",
+        "away": "Fuenlabrada",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "0-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-10",
+            "score": "0-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Fiorentina",
+        "away": "Sassuolo",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "1-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-16",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Verona",
+        "away": "Parma",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "3-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-15",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Betis",
+        "away": "Villarreal",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "0-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-13",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Valladolid",
+        "away": "Levante",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-01",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-27",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Sheffield United",
+        "away": "Tottenham",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-02",
+            "score": "3-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-17",
+            "score": "1-3"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Eibar",
+        "away": "Osasuna",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-02",
+            "score": "0-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-18",
+            "score": "0-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Atalanta",
+        "away": "Napoli",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-02",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-21",
+            "score": "4-2"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Albacete",
+        "away": "Alcorcon",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-02",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-03",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Man City",
+        "away": "Liverpool",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-02",
+            "score": "4-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-08",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Vallecano",
+        "away": "Malaga",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-02",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-03",
+            "score": "4-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Roma",
+        "away": "Udinese",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-02",
+            "score": "0-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-14",
+            "score": "3-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Real Madrid",
+        "away": "Getafe",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-02",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-09",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Pisa",
+        "away": "Cittadella",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-03",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-28",
+            "score": "1-4"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Girona",
+        "away": "Zaragoza",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-03",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-16",
+            "score": "3-0"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Cosenza",
+        "away": "Ascoli",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-03",
+            "score": "0-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-02",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Cremonese",
+        "away": "Pescara",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-03",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-07",
+            "score": "3-0"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Venezia",
+        "away": "Empoli",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-03",
+            "score": "0-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-31",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Virtus Entella",
+        "away": "Chievo",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-03",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-07",
+            "score": "1-3"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Derby",
+        "away": "Nottm Forest",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-26",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Leicester",
+        "away": "Crystal Palace",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "3-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-26",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Bristol City",
+        "away": "Cardiff",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "0-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-06",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Huddersfield",
+        "away": "Preston",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-24",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Luton",
+        "away": "Reading",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "0-5"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-21",
+            "score": "0-0"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Stoke",
+        "away": "Barnsley",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "4-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-21",
+            "score": "2-2"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Celta",
+        "away": "Betis",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-22",
+            "score": "2-3"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Juventus",
+        "away": "Torino",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "4-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-05",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Wolves",
+        "away": "Arsenal",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "0-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-02",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Valladolid",
+        "away": "Alaves",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-25",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Almeria",
+        "away": "Tenerife",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-26",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Fuenlabrada",
+        "away": "Mirandes",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-12",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Lazio",
+        "away": "Milan",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "0-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-26",
+            "score": "3-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Granada",
+        "away": "Valencia",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-04",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-30",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Burnley",
+        "away": "Sheffield United",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-29",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Swansea",
+        "away": "Sheffield Weds",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-25",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Ath Bilbao",
+        "away": "Real Madrid",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "0-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-16",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Middlesbrough",
+        "away": "QPR",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "0-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-17",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Newcastle",
+        "away": "West Ham",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-17",
+            "score": "3-2"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Inter",
+        "away": "Bologna",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-05",
+            "score": "3-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Liverpool",
+        "away": "Aston Villa",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-10",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Cagliari",
+        "away": "Atalanta",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "0-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-14",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Parma",
+        "away": "Fiorentina",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-07",
+            "score": "0-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Udinese",
+        "away": "Genoa",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-22",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Las Palmas",
+        "away": "Ponferradina",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "3-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-02",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Malaga",
+        "away": "Albacete",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-11",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Osasuna",
+        "away": "Getafe",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-03",
+            "score": "0-0"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Southampton",
+        "away": "Man City",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-19",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Alcorcon",
+        "away": "Lugo",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-20",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Napoli",
+        "away": "Roma",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-29",
+            "score": "4-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Villarreal",
+        "away": "Barcelona",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-05",
+            "score": "1-4"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-25",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Levante",
+        "away": "Sociedad",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-06",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-19",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Sp Gijon",
+        "away": "Girona",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-06",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-09-26",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Tottenham",
+        "away": "Everton",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-06",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-09-13",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Zaragoza",
+        "away": "Vallecano",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-06",
+            "score": "2-4"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-25",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Sevilla",
+        "away": "Eibar",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-06",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-24",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Crystal Palace",
+        "away": "Chelsea",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-07",
+            "score": "2-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-10",
+            "score": "1-4"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Luton",
+        "away": "Barnsley",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-07",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-05",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Reading",
+        "away": "Huddersfield",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-07",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-08",
+            "score": "2-2"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Valencia",
+        "away": "Valladolid",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-07",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-09",
+            "score": "3-0"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Cardiff",
+        "away": "Blackburn",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-07",
+            "score": "2-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-10",
+            "score": "2-2"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Arsenal",
+        "away": "Leicester",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-07",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-25",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Milan",
+        "away": "Juventus",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-07",
+            "score": "4-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-06",
+            "score": "1-3"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Celta",
+        "away": "Ath Madrid",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-07",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-17",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Millwall",
+        "away": "Middlesbrough",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "0-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-20",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Man City",
+        "away": "Newcastle",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "5-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-26",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Sheffield United",
+        "away": "Wolves",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-09-14",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "West Ham",
+        "away": "Burnley",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "0-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-16",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Birmingham",
+        "away": "Swansea",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "1-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-02",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Oviedo",
+        "away": "Las Palmas",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-10",
+            "score": "0-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Fiorentina",
+        "away": "Cagliari",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-10",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Genoa",
+        "away": "Napoli",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-06",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Betis",
+        "away": "Osasuna",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "3-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-01",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Getafe",
+        "away": "Villarreal",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "1-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-08",
+            "score": "1-3"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Sheffield Weds",
+        "away": "Preston",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "1-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-30",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Brighton",
+        "away": "Liverpool",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "1-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-28",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Atalanta",
+        "away": "Sampdoria",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-24",
+            "score": "1-3"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Bologna",
+        "away": "Sassuolo",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-18",
+            "score": "3-4"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Roma",
+        "away": "Parma",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-22",
+            "score": "3-0"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Ponferradina",
+        "away": "Lugo",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-08",
+            "score": "0-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-24",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Everton",
+        "away": "Southampton",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-09",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-01",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Albacete",
+        "away": "Sp Gijon",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-09",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-20",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Aston Villa",
+        "away": "Man United",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-09",
+            "score": "0-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-09",
+            "score": "1-3"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Girona",
+        "away": "Almeria",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-09",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-07",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Tenerife",
+        "away": "Zaragoza",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-09",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-08",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Verona",
+        "away": "Inter",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-09",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-23",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Ath Bilbao",
+        "away": "Sevilla",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-09",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-31",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Huddersfield",
+        "away": "Luton",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-10",
+            "score": "0-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-07",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Sociedad",
+        "away": "Granada",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-10",
+            "score": "2-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-08",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Ascoli",
+        "away": "Salernitana",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-10",
+            "score": "3-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-20",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Empoli",
+        "away": "Frosinone",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-10",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-30",
+            "score": "3-1"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Pordenone",
+        "away": "Pisa",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-10",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-24",
+            "score": "2-2"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Real Madrid",
+        "away": "Alaves",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-10",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-28",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Derby",
+        "away": "Brentford",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "1-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-16",
+            "score": "2-2"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Liverpool",
+        "away": "Burnley",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-21",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Middlesbrough",
+        "away": "Bristol City",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "1-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-23",
+            "score": "1-3"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Preston",
+        "away": "Nottm Forest",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-02",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "QPR",
+        "away": "Sheffield Weds",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "0-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-10",
+            "score": "4-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Osasuna",
+        "away": "Celta",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-04",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Lazio",
+        "away": "Sassuolo",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-24",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Sheffield United",
+        "away": "Chelsea",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "3-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-07",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Las Palmas",
+        "away": "Mirandes",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-25",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Valladolid",
+        "away": "Barcelona",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "0-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-22",
+            "score": "0-3"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Brighton",
+        "away": "Man City",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "0-5"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-18",
+            "score": "3-2"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Juventus",
+        "away": "Atalanta",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-16",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Ath Madrid",
+        "away": "Betis",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-11",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-24",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Wolves",
+        "away": "Everton",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-12",
+            "score": "3-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-12",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Stoke",
+        "away": "Birmingham",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-12",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-04",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Aston Villa",
+        "away": "Crystal Palace",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-12",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-26",
+            "score": "3-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Levante",
+        "away": "Ath Bilbao",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-12",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-26",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Tottenham",
+        "away": "Arsenal",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-12",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-06",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Fiorentina",
+        "away": "Verona",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-12",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-19",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Parma",
+        "away": "Bologna",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-12",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-07",
+            "score": "0-3"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Udinese",
+        "away": "Sampdoria",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-12",
+            "score": "1-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-16",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Lugo",
+        "away": "Girona",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-12",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-21",
+            "score": "3-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Napoli",
+        "away": "Milan",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-12",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-22",
+            "score": "1-3"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Zaragoza",
+        "away": "Oviedo",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-12",
+            "score": "2-4"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-13",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Almeria",
+        "away": "Vallecano",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "3-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-02",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Sp Gijon",
+        "away": "Malaga",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-14",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Alaves",
+        "away": "Getafe",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-09-26",
+            "score": "0-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Villarreal",
+        "away": "Sociedad",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-30",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Ascoli",
+        "away": "Empoli",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-01",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Cremonese",
+        "away": "Chievo",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-04",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Salernitana",
+        "away": "Cittadella",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "4-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-05",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Venezia",
+        "away": "Pescara",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-20",
+            "score": "4-0"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Virtus Entella",
+        "away": "Pisa",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-22",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Man United",
+        "away": "Southampton",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-02",
+            "score": "9-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Inter",
+        "away": "Torino",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "3-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-22",
+            "score": "4-2"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Alcorcon",
+        "away": "Tenerife",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-09-19",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Granada",
+        "away": "Real Madrid",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-13",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-13",
+            "score": "1-4"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Reading",
+        "away": "Middlesbrough",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-14",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-20",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Cardiff",
+        "away": "Derby",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-14",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-02",
+            "score": "4-0"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Luton",
+        "away": "QPR",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-14",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-12",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Millwall",
+        "away": "Blackburn",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-14",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-06",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Sheffield Weds",
+        "away": "Huddersfield",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-14",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-17",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Brentford",
+        "away": "Preston",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-04",
+            "score": "2-4"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Bristol City",
+        "away": "Stoke",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-02",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Burnley",
+        "away": "Wolves",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-21",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Newcastle",
+        "away": "Tottenham",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "1-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-04",
+            "score": "2-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Nottm Forest",
+        "away": "Swansea",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-29",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Bologna",
+        "away": "Napoli",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-08",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Milan",
+        "away": "Parma",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "3-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-13",
+            "score": "2-2"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Sampdoria",
+        "away": "Cagliari",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "3-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-07",
+            "score": "2-2"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Arsenal",
+        "away": "Liverpool",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-03",
+            "score": "0-3"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Roma",
+        "away": "Verona",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-31",
+            "score": "3-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Sassuolo",
+        "away": "Juventus",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "3-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-12",
+            "score": "1-3"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Udinese",
+        "away": "Lazio",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-15",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-21",
+            "score": "0-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Eibar",
+        "away": "Valladolid",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "3-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-13",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Everton",
+        "away": "Aston Villa",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-01",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Leicester",
+        "away": "Sheffield United",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-14",
+            "score": "5-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Torino",
+        "away": "Genoa",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "3-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-13",
+            "score": "0-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Barcelona",
+        "away": "Osasuna",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-29",
+            "score": "4-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Betis",
+        "away": "Alaves",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-08",
+            "score": "3-2"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Celta",
+        "away": "Levante",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "2-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-30",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Getafe",
+        "away": "Ath Madrid",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "0-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-13",
+            "score": "0-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Real Madrid",
+        "away": "Villarreal",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-22",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Sociedad",
+        "away": "Sevilla",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-04-18",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Crystal Palace",
+        "away": "Man United",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "0-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-03",
+            "score": "0-0"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Southampton",
+        "away": "Brighton",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-16",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-14",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Pescara",
+        "away": "Frosinone",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-17",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-24",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Cittadella",
+        "away": "Ascoli",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-17",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-16",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Empoli",
+        "away": "Virtus Entella",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-17",
+            "score": "2-4"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-20",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "I2",
+        "home": "Pordenone",
+        "away": "Cosenza",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-17",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-10",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Albacete",
+        "away": "Zaragoza",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-17",
+            "score": "4-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-22",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Malaga",
+        "away": "Alcorcon",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-17",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-09-26",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Ponferradina",
+        "away": "Almeria",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-17",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-21",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Tenerife",
+        "away": "Lugo",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-17",
+            "score": "1-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-29",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "SP2",
+        "home": "Vallecano",
+        "away": "Las Palmas",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-17",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-20",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Stoke",
+        "away": "Brentford",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-18",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-24",
+            "score": "3-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Blackburn",
+        "away": "Reading",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-18",
+            "score": "4-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-27",
+            "score": "2-4"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Middlesbrough",
+        "away": "Cardiff",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-18",
+            "score": "1-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-27",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Preston",
+        "away": "Birmingham",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-18",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-31",
+            "score": "1-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "QPR",
+        "away": "Millwall",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-18",
+            "score": "4-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-17",
+            "score": "3-2"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Swansea",
+        "away": "Bristol City",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-18",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-02-27",
+            "score": "1-3"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Verona",
+        "away": "Atalanta",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-18",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-21",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Cagliari",
+        "away": "Sassuolo",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-18",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-31",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Milan",
+        "away": "Bologna",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-18",
+            "score": "5-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-09-21",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "E1",
+        "home": "Barnsley",
+        "away": "Nottm Forest",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-11-21",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Alaves",
+        "away": "Barcelona",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "0-5"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-10-31",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Tottenham",
+        "away": "Leicester",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "3-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-20",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Parma",
+        "away": "Sampdoria",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "2-3"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-24",
+            "score": "0-2"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Valladolid",
+        "away": "Betis",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-02",
+            "score": "1-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Villarreal",
+        "away": "Eibar",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "4-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-09-19",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Fiorentina",
+        "away": "Torino",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "2-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-09-19",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Napoli",
+        "away": "Udinese",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "2-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-11",
+            "score": "5-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Ath Madrid",
+        "away": "Sociedad",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "1-1"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-12",
+            "score": "2-1"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Granada",
+        "away": "Ath Bilbao",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "4-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-09-12",
+            "score": "2-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Levante",
+        "away": "Getafe",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2020-12-05",
+            "score": "3-0"
+          }
+        ]
+      },
+      {
+        "comp": "LaLiga",
+        "home": "Sevilla",
+        "away": "Valencia",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "1-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-05-12",
+            "score": "1-0"
+          }
+        ]
+      },
+      {
+        "comp": "SerieA",
+        "home": "Roma",
+        "away": "Inter",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-19",
+            "score": "2-2"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-01-10",
+            "score": "2-2"
+          }
+        ]
+      },
+      {
+        "comp": "EPL",
+        "home": "Brighton",
+        "away": "Newcastle",
+        "reports": [
+          {
+            "source": "cfmd",
+            "date": "2020-07-20",
+            "score": "0-0"
+          },
+          {
+            "source": "cfmd",
+            "date": "2021-03-20",
+            "score": "3-0"
+          }
+        ]
+      }
+    ],
     "unmapped_names": [
       "UCL:BLR:BATE Borisov",
       "UCL:BUL:PFC Ludogorets Razgrad",

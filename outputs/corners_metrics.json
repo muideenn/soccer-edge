@@ -37,7 +37,7 @@
       "model_mean_p": 0.4794414456459776,
       "logloss_model": 0.6838492630150388,
       "logloss_base_rate": 0.6964649334709562,
-      "brier_model": 0.24532966398059564,
+      "brier_model": 0.2453296639805956,
       "brier_base_rate": 0.2516553101967745
     },
     {
